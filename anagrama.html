@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>Desafio Anagrama</h1>
+
+<script>
+    function anagrama(cad1, cad2)
+    {
+        var anagrama = true;
+        var numPalavra, posPalavra; 
+
+        var primeiraPalavra = prompt("Informe a primera palavra");
+        var segundaPalavra = prompt("Informe a segunda palavra");
+
+        if(primeiraPalavra.length != segundaPalavra.length){
+            anagrama = false;
+        }
+        else{
+            numPalavra = 0;
+            while(anagrama && (numPalavra < primeiraPalavra.lenght)){
+                posPalavra = segundaPalavra.indexOf(primeiraPalavra[numPalavra])
+                if(posPalavra == -1){
+                    anagrama = false;
+                }else{
+                    segundaPalavra.split(posPalavra); 
+                }
+                numPalavra++;
+            }
+        }
+
+    if(anagrama){
+        var resultado = "Sim são anagramas";
+    }else{
+        var resultado = "Não são anagramas";
+    }
+    return resultado;
+    }
+   
+</script>
